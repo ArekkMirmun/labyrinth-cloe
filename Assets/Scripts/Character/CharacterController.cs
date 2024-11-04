@@ -1,19 +1,22 @@
+using System.Collections;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
     
     public float movSpeed;
+    public bool canMove;
     float speedX, speedY;
     private Rigidbody2D rb;
     private Vector2 movement;
     private Animator animator;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        canMove = true;
     }
 
     // Update is called once per frame
@@ -29,16 +32,26 @@ public class CharacterController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * (movSpeed * Time.fixedDeltaTime));
+        if (canMove)
+        {
+            rb.MovePosition(rb.position + movement * (movSpeed * Time.fixedDeltaTime));
+        }
     }
 
-    public void FreezeCharacter()
+    public void FreezeCharacter(float seconds)
     {
-        rb.bodyType = RigidbodyType2D.Static;
+        StartCoroutine(TemporalMovementFreeze(seconds));
     }
 
-    public void UnFreezeCharacter()
+    private IEnumerator TemporalMovementFreeze(float seconds)
     {
-        rb.bodyType = RigidbodyType2D.Dynamic;
+        canMove = false;
+        yield return new WaitForSeconds(seconds);
+        canMove = true;
+    }
+
+    public bool IsMoving()
+    {
+        return movement != Vector2.zero;
     }
 }

@@ -12,6 +12,7 @@ public class MessageController : MonoBehaviour
     public CharacterController characterController;
     public SanityController sanityController;
     public bool executed = false;
+    public AudioSource audioSource;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -28,7 +29,7 @@ public class MessageController : MonoBehaviour
     IEnumerator ShowTerrorMessage()
     {
         sanityController.ParanormalEvent();
-        Destroy(terrorMessageTrigger);
+        Destroy(terrorMessageTrigger, 1.8f);
         characterController.FreezeCharacter(1.8f);
         Destroy(terrorMessage, 1.9f);
 
@@ -43,6 +44,7 @@ public class MessageController : MonoBehaviour
          if (!executed && other.gameObject.CompareTag("Player"))
          {
              StartCoroutine(ShowTerrorMessage());
+             audioSource.Play();
          }
     }
     

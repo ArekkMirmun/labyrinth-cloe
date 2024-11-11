@@ -95,4 +95,17 @@ public class SanityController : MonoBehaviour
     {
         sanityText.text = "Sanity: "+ _sanity.ToString()+ "%";
     }
+    
+    private void Awake()
+    {
+        int numInstancias = FindObjectsByType<SanityController>(FindObjectsSortMode.None).Length;
+        if (numInstancias > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 }

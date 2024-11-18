@@ -23,6 +23,7 @@ public class LeverController : MonoBehaviour
         if (!_used && triggerAble && Input.GetKeyDown(KeyCode.E))
         {
             _used = true;
+            keyHint.SetActive(false);
             leverSprite.sprite = leverTriggeredSprite;
             DecreaseRemainingLevers();
         }

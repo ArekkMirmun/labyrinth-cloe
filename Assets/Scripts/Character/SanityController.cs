@@ -77,7 +77,8 @@ public class SanityController : MonoBehaviour
     //Function executed when sanity hits 0 or less
     private void GameOver()
     {
-        Destroy(characterController.gameObject);
+        SceneController sceneController = FindObjectsByType<SceneController>(FindObjectsSortMode.None)[0];
+        sceneController.LoadGameOver();
     }
     
     void ResetSanityTimer()

@@ -3,19 +3,18 @@ using UnityEngine;
 public class LeverController : MonoBehaviour
 {
 
-    [SerializeField]private static int _remainingLevers;
-    public static int LeversToExit = 3;
     private bool _used;
     public Sprite leverTriggeredSprite;
     public SpriteRenderer leverSprite;
     public bool triggerAble = false;
     public GameObject keyHint;
+    private GameController gc;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _remainingLevers = LeversToExit;
         keyHint.SetActive(false);
+        gc = FindObjectsByType<GameController>(FindObjectsSortMode.None)[0];
     }
 
     // Update is called once per frame
@@ -32,8 +31,10 @@ public class LeverController : MonoBehaviour
     void DecreaseRemainingLevers()
     {
         print("Lever used");
-        _remainingLevers--;
-        if (_remainingLevers == 0)
+        
+        int remainingLevers = gc.DecreaseAndGetNumberOfLevers();
+        
+        if (remainingLevers == 0)
         {
             OpenExit();
         }
@@ -42,6 +43,8 @@ public class LeverController : MonoBehaviour
     private void OpenExit()
     {
         print("Open exit");
+        
+        gc.OpenExit();
     }
 
 

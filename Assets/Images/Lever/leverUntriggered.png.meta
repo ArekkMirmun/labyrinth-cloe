@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      leverUntriggered_0: 6083816738128852977
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

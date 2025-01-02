@@ -13,6 +13,7 @@ public class SceneController : MonoBehaviour
     private void Start()
     {
         panel.gameObject.SetActive(false);
+        Application.targetFrameRate = 120;
     }
 
     public void CloseGame()
@@ -57,11 +58,12 @@ public class SceneController : MonoBehaviour
 
     private IEnumerator FadeAndLoadScene(string sceneName)
     {
+        //Reanudes the game if it was paused
+        Time.timeScale = 1f;
         panel.gameObject.SetActive(true);
         loadingSound.Play();
         // Fade in (0 to 1)
         yield return StartCoroutine(Fade(0, 1));
-
         // Load the specified scene
         SceneManager.LoadScene(sceneName);
         

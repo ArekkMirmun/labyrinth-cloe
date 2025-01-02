@@ -29,6 +29,16 @@ public class SceneController : MonoBehaviour
     {
         StartCoroutine(FadeAndLoadScene("Forest_Level"));
     }
+    
+    public void LoadAnotherLevel()
+    {
+        StartCoroutine(FadeAndLoadScene("Another_Level"));
+    }
+    
+    public void LoadWinLevel()
+    {
+        StartCoroutine(FadeAndLoadScene("Win"));
+    }
 
     public void LoadHelpLevel()
     {

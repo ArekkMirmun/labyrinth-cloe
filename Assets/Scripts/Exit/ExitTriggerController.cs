@@ -9,7 +9,7 @@ public class ExitTriggerController : MonoBehaviour
     // declare the enum somewhere visible
     public enum MyEnumeratedType 
     {
-        Forest, Another
+        Forest, Another, Win
     }
 
 // in your script, declare a public variable of your enum type
@@ -25,7 +25,10 @@ public class ExitTriggerController : MonoBehaviour
                 sceneController.LoadForestLevel();
                 break;
             case MyEnumeratedType.Another:
-                throw new NotImplementedException();
+                sceneController.LoadAnotherLevel();
+                break;
+            case MyEnumeratedType.Win:
+                sceneController.LoadWinLevel();
                 break;
             default:
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

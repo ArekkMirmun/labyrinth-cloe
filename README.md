@@ -1,7 +1,9 @@
 # Cloe's Labyrinth
-
+![Game Menu](/Assets/Screenshots/menu.png?raw=true "Game Menu")
 ### Description
 **Cloe's Labyrinth** is a 2D pixel art game developed by Alejandro Miranda Muñoz. This game follows the story of Cloe, a girl who gets lost in a forest during a picnic with her family. Her mission is to escape the forest before losing her sanity due to paranormal events and the passage of time.
+
+**Itch.io Page**: [Cloe's Labyrinth](https://arekk.itch.io/cloes-labyrinth)
 
 ### Game Features
 - **Visual Style**: 2D pixel art with a dark and mysterious atmosphere.
@@ -10,7 +12,9 @@
   - Exploration and puzzle-solving across three unique levels.
 - **Levels**:
   1. **The Cave**: An initial level where Cloe faces the dangers of darkness.
+     ![Level 1 Picture](/Assets/Screenshots/level1.png?raw=true "Level 1")
   2. **The Forest**: A vast and oppressive environment filled with mysteries and threats.
+     ![Level 2 Picture](/Assets/Screenshots/level2.png?raw=true "Level 2")
   3. **Another**: An inverted version of the forest, where everything is reversed, increasing difficulty and confusion.
 
 ### Objective
@@ -39,7 +43,6 @@ Help Cloe escape the forest by completing the three levels before she loses all 
 - **World Sprites**: [RPG Worlds - Caves](https://assetstore.unity.com/packages/2d/environments/rpg-worlds-caves-167274), [Pixel Art Top Down - Basic](https://assetstore.unity.com/packages/2d/environments/pixel-art-top-down-basic-187605)
 - **Monster Sprites**: [Pixel Monster Pack](https://assetstore.unity.com/packages/2d/characters/pixel-monster-pack-75508)
 - **Apple Sprite**: [Free Pixel Food](https://assetstore.unity.com/packages/2d/environments/free-pixel-food-113523)
-- **Itch.io Page**: [Cloe's Labyrinth](https://arekk.itch.io/cloes-labyrinth)
 - **Sound Effects**: From a free sound library
 
 ### License
